@@ -92,7 +92,7 @@ video_downloads_folder = ""
 
 [database.downloads]
 enabled = true
-path = "C:\\Users\\Default\\AppData\\Local\\streamrip\\streamrip\\downloads.db"
+path = "C:\\ProgramData\\streamrip\\downloads.db"
 
 # If a download fails, the item ID is stored here. Then, `rip repair` can be
 # called to retry the downloads
@@ -100,7 +100,7 @@ path = "C:\\Users\\Default\\AppData\\Local\\streamrip\\streamrip\\downloads.db"
 
 [database.failed_downloads]
 enabled = true
-path = "C:\\Users\\Default\\AppData\\Local\\streamrip\\streamrip\\failed_downloads.db"
+path = "C:\\ProgramData\\streamrip\\failed_downloads.db"
 
 # Convert tracks to a codec after downloading them.
 
