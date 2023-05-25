@@ -1,5 +1,9 @@
 @echo off
-if exist "C:\Users\%USERNAME%\AppData\Local\streamrip" rmdir /s /q "C:\Users\%USERNAME%\AppData\Local\streamrip"
-xcopy "%cd%\streamrip" "C:\Users\%USERNAME%\AppData\Local\streamrip" /E /i /y
-echo Done!
+chcp 65001
+cls
+python.exe -m pip install --upgrade pip
+pip install streamrip
+pip install streamrip --upgrade
+pip install toml
+echo Інсталяція завершена
 pause
