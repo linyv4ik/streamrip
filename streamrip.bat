@@ -32,6 +32,15 @@ move "C:\ProgramData\TEMP\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Lo
 if exist "C:\ProgramData\TEMP\streamrip" rmdir /S /Q "C:\ProgramData\TEMP\streamrip"
 rip url --max-quality 4 %input%
 
+::peru
+del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+if not exist "C:\ProgramData\TEMP\streamrip" mkdir "C:\ProgramData\TEMP\streamrip"
+xcopy "C:\Users\%USERNAME%\AppData\Local\streamrip\peru.toml" "C:\ProgramData\TEMP\streamrip" /y
+rename "C:\ProgramData\TEMP\streamrip\peru.toml" config.toml
+move "C:\ProgramData\TEMP\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+if exist "C:\ProgramData\TEMP\streamrip" rmdir /S /Q "C:\ProgramData\TEMP\streamrip"
+rip url --max-quality 4 %input%
+
 ::unitedstates
 del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
 if not exist "C:\ProgramData\TEMP\streamrip" mkdir "C:\ProgramData\TEMP\streamrip"
