@@ -35,6 +35,13 @@ rip url --max-quality 4 %input%
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 %input%
 
+::turkey
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\turkey.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\turkey.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
 ::unitedstates
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
 xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
