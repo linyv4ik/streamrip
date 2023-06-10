@@ -5,7 +5,11 @@ if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
 if not exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 cls
 :loop
+echo.
+echo 1 Видалити історію завантаження
+echo.
 set /P input="Введіть посилання на альбом Deezer: "
+if %input% == 1 (goto deezer_db)
 
 ::australia
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
@@ -56,4 +60,11 @@ rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
 move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 rip url --max-quality 4 %input%
 
+goto loop
+
+:deezer_db
+if exist "C:\ProgramData\streamrip\downloads.db" del /f/q "C:\ProgramData\streamrip\downloads.db"
+if exist "C:\ProgramData\streamrip\failed_downloads.db" del /f/q "C:\ProgramData\streamrip\failed_downloads.db"
+echo.
+echo Історію завантаження видалено!
 goto loop
