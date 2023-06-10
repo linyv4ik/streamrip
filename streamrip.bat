@@ -7,6 +7,13 @@ cls
 :loop
 set /P input="Введіть посилання на альбом Deezer: "
 
+::australia
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\australia.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\australia.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
 ::canada
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
 xcopy "%cd%\streamrip\canada.toml" "C:\ProgramData\streamrip" /y
