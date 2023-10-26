@@ -30,6 +30,20 @@ rename "C:\ProgramData\streamrip\austria.toml" config.toml
 move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 rip url --max-quality 4 %input%
 
+::belgium
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\belgium.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\belgium.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
+::bolivia
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\bolivia.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\bolivia.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
 ::brasil
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
 xcopy "%cd%\streamrip\brasil.toml" "C:\ProgramData\streamrip" /y
@@ -65,6 +79,20 @@ rip url --max-quality 4 %input%
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 %input%
 
+::croatia
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\croatia.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\croatia.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
+::denmark
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\denmark.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\denmark.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 %input%
+
 ::france
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
 xcopy "%cd%\streamrip\france.toml" "C:\ProgramData\streamrip" /y
@@ -93,17 +121,31 @@ rip url --max-quality 4 %input%
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 %input%
 
-::mauritius
+::indonesia
 ::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-::xcopy "%cd%\streamrip\mauritius.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\mauritius.toml" config.toml
+::xcopy "%cd%\streamrip\indonesia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\indonesia.toml" config.toml
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 %input%
 
+::mauritius
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\mauritius.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\mauritius.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
 ::mexico
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\mexico.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\mexico.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
+::netherlands
 ::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-::xcopy "%cd%\streamrip\mexico.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\mexico.toml" config.toml
+::xcopy "%cd%\streamrip\netherlands.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\netherlands.toml" config.toml
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 %input%
 
@@ -122,11 +164,11 @@ move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\s
 rip url --max-quality 4 %input%
 
 ::paraguay
-::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-::xcopy "%cd%\streamrip\paraguay.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\paraguay.toml" config.toml
-::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-::rip url --max-quality 4 %input%
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\paraguay.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\paraguay.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
 
 ::peru
 ::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
@@ -135,10 +177,24 @@ rip url --max-quality 4 %input%
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 %input%
 
-::serbia
+::salvador
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-xcopy "%cd%\streamrip\serbia.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\serbia.toml" config.toml
+xcopy "%cd%\streamrip\salvador.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\salvador.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 %input%
+
+::serbia
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\serbia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\serbia.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 %input%
+
+::southafrica
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\southafrica.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\southafrica.toml" config.toml
 move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 rip url --max-quality 4 %input%
 
@@ -150,18 +206,18 @@ move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\s
 rip url --max-quality 4 %input%
 
 ::unitedkingdom
-if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-xcopy "%cd%\streamrip\unitedkingdom.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\unitedkingdom.toml" config.toml
-move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-rip url --max-quality 4 %input%
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\unitedkingdom.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\unitedkingdom.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 %input%
 
 ::unitedstates
-if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
-move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-rip url --max-quality 4 %input%
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 %input%
 
 goto menu
 
@@ -181,6 +237,20 @@ rename "C:\ProgramData\streamrip\austria.toml" config.toml
 move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 rip url --max-quality 4 --file url.txt
 
+::belgium
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\belgium.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\belgium.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 --file url.txt
+
+::bolivia
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\bolivia.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\bolivia.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 --file url.txt
+
 ::brasil
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
 xcopy "%cd%\streamrip\brasil.toml" "C:\ProgramData\streamrip" /y
@@ -216,6 +286,20 @@ rip url --max-quality 4 --file url.txt
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 --file url.txt
 
+::croatia
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\croatia.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\croatia.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 --file url.txt
+
+::denmark
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\denmark.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\denmark.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 --file url.txt
+
 ::france
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
 xcopy "%cd%\streamrip\france.toml" "C:\ProgramData\streamrip" /y
@@ -244,17 +328,31 @@ rip url --max-quality 4 --file url.txt
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 --file url.txt
 
-::mauritius
+::indonesia
 ::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-::xcopy "%cd%\streamrip\mauritius.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\mauritius.toml" config.toml
+::xcopy "%cd%\streamrip\indonesia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\indonesia.toml" config.toml
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 --file url.txt
 
+::mauritius
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\mauritius.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\mauritius.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 --file url.txt
+
 ::mexico
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\mexico.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\mexico.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 --file url.txt
+
+::netherlands
 ::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-::xcopy "%cd%\streamrip\mexico.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\mexico.toml" config.toml
+::xcopy "%cd%\streamrip\netherlands.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\netherlands.toml" config.toml
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 --file url.txt
 
@@ -273,11 +371,11 @@ move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\s
 rip url --max-quality 4 --file url.txt
 
 ::paraguay
-::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-::xcopy "%cd%\streamrip\paraguay.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\paraguay.toml" config.toml
-::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-::rip url --max-quality 4 --file url.txt
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\paraguay.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\paraguay.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 --file url.txt
 
 ::peru
 ::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
@@ -286,10 +384,24 @@ rip url --max-quality 4 --file url.txt
 ::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 ::rip url --max-quality 4 --file url.txt
 
-::serbia
+::salvador
 if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-xcopy "%cd%\streamrip\serbia.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\serbia.toml" config.toml
+xcopy "%cd%\streamrip\salvador.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\salvador.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+rip url --max-quality 4 --file url.txt
+
+::serbia
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\serbia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\serbia.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 --file url.txt
+
+::southafrica
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\southafrica.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\southafrica.toml" config.toml
 move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
 rip url --max-quality 4 --file url.txt
 
@@ -301,18 +413,18 @@ move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\s
 rip url --max-quality 4 --file url.txt
 
 ::unitedkingdom
-if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-xcopy "%cd%\streamrip\unitedkingdom.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\unitedkingdom.toml" config.toml
-move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-rip url --max-quality 4 --file url.txt
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\unitedkingdom.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\unitedkingdom.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 --file url.txt
 
 ::unitedstates
-if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
-move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-rip url --max-quality 4 --file url.txt
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::rip url --max-quality 4 --file url.txt
 
 goto menu
 
