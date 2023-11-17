@@ -173,10 +173,10 @@ exclude = []
 add_singles_to_folder = false
 # Available keys: "albumartist", "title", "year", "bit_depth", "sampling_rate",
 # "container", "id", and "albumcomposer"
-folder_format = "{albumartist} - {title} ({year}) [{container}] [{bit_depth}B-{sampling_rate}kHz]"
+folder_format = "{albumartist} - {title} ({year}) [{bit_depth}B-{sampling_rate}kHz]"
 # Available keys: "tracknumber", "artist", "albumartist", "composer", "title",
 # and "albumcomposer"
-track_format = "{tracknumber}. {artist} - {title}{explicit}"
+track_format = "{tracknumber}. {title}{explicit}"
 # Only allow printable ASCII characters in filenames.
 restrict_characters = false
 # Truncate the filename if it is greater than 120 characters
