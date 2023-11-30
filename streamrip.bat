@@ -1,9 +1,17 @@
-::v1.02
 chcp 65001
 @echo off
 if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
 if not exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+set version=1.1
+curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
+set /p file_version=<"%tmp%\s_version.txt"
+if %version% lss %file_version% (
+    echo Поточна версія %version% вийшло оновлення %file_version%
+	goto choice
+) else (
+    goto menu
+)
 :menu
 echo.
 echo Введіть посилання на альбом Deezer або виберіть бажану опцію з меню
@@ -434,3 +442,22 @@ if exist "C:\ProgramData\streamrip\failed_downloads.db" del /f/q "C:\ProgramData
 echo.
 echo Історію завантаження видалено!
 goto menu
+
+:choice
+set /p update="Оновити скрипт до останньої версії? (1 так / 0 ні): "
+cls
+if %update% == 0 (goto menu)
+if %update% == 1 (goto upd)
+goto choice
+:upd
+if exist "%tmp%\streamrip" @rd /s /q "%tmp%\streamrip"
+if exist "%tmp%\streamrip.zip" del /f "%tmp%\streamrip.zip"
+if not exist "%tmp%\streamrip" mkdir "%tmp%\streamrip"
+curl -s "https://codeload.github.com/linyv4ik/streamrip/zip/refs/heads/main" --output "%tmp%\streamrip.zip"
+powershell Expand-Archive "%tmp%\streamrip.zip" -DestinationPath "%tmp%\streamrip"
+xcopy "%tmp%\streamrip\streamrip-main\*" "%cd%" /E /I /Y
+if exist "%tmp%\streamrip" @rd /s /q "%tmp%\streamrip"
+if exist "%tmp%\streamrip.zip" del /f "%tmp%\streamrip.zip"
+timeout /t 2
+start cmd /c "streamrip.bat"
+exit
