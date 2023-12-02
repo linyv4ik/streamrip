@@ -449,6 +449,7 @@ cls
 if %update% == 0 (goto menu)
 if %update% == 1 (goto upd)
 goto choice
+
 :upd
 if exist "%tmp%\streamrip" @rd /s /q "%tmp%\streamrip"
 if exist "%tmp%\streamrip.zip" del /f "%tmp%\streamrip.zip"
