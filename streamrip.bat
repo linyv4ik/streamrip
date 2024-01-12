@@ -2,7 +2,7 @@
 chcp 65001
 if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
 if not exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-set version=1.6
+set version=1.7
 curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
 set /p file_version=<"%tmp%\s_version.txt"
@@ -344,15 +344,15 @@ if %input% == 1 (
 ::)
 
 ::turkey
-if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-xcopy "%cd%\streamrip\turkey.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\turkey.toml" config.toml
-move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-if %input% == 1 (
-	rip url --max-quality 4 --file url.txt
-) else (
-    rip url --max-quality 4 %input%
-)
+::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+::xcopy "%cd%\streamrip\turkey.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\turkey.toml" config.toml
+::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+::if %input% == 1 (
+::	rip url --max-quality 4 --file url.txt
+::) else (
+::    rip url --max-quality 4 %input%
+::)
 
 ::unitedkingdom
 ::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
@@ -366,15 +366,15 @@ if %input% == 1 (
 ::)
 
 ::unitedstates
-::if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
-::xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
-::move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
-::if %input% == 1 (
-::	rip url --max-quality 4 --file url.txt
-::) else (
-::    rip url --max-quality 4 %input%
-::)
+if exist "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml" del /f/q "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip\config.toml"
+xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
+move "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Local\streamrip\streamrip"
+if %input% == 1 (
+	rip url --max-quality 4 --file url.txt
+) else (
+    rip url --max-quality 4 %input%
+)
 
 goto menu
 
