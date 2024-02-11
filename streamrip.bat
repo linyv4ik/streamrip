@@ -4,7 +4,8 @@ title streamrip
 ::restore health
 if exist "%tmp%\update.bat" del /f "%tmp%\update.bat"
 if not exist "%cd%\streamrip" goto upd
-
+if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
+if not exist "C:\Users\%USERNAME%\AppData\Roaming\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
 ::update checker
 :: примусове оновлення до streamrip v2.0.5+ в v1.11 буде видалено
 if exist "C:\ProgramData\streamrip\upd.txt" (
@@ -16,8 +17,6 @@ if exist "C:\ProgramData\streamrip\upd.txt" (
 )
 :skip
 if exist "%tmp%\s_version.txt" del /f "%tmp%\s_version.txt"
-if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
-if not exist "C:\Users\%USERNAME%\AppData\Roaming\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
 set version=1.10
 curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
