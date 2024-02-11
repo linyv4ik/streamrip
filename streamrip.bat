@@ -18,7 +18,7 @@ if exist "C:\ProgramData\streamrip\upd.txt" (
 if exist "%tmp%\s_version.txt" del /f "%tmp%\s_version.txt"
 if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
 if not exist "C:\Users\%USERNAME%\AppData\Roaming\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-set version=1.9
+set version=1.10
 curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
 set /p file_version=<"%tmp%\s_version.txt"
