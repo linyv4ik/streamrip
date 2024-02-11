@@ -1,10 +1,17 @@
 @echo off
 chcp 65001
-:: примусове оновлення до streamrip v2.0.+ в v1.11 буде видалено
+title streamrip
+::restore health
+if exist "%tmp%\update.bat" del /f "%tmp%\update.bat"
+if not exist "%cd%\streamrip" goto upd
+
+::update checker
+:: примусове оновлення до streamrip v2.0.5+ в v1.11 буде видалено
 if exist "C:\ProgramData\streamrip\upd.txt" (
 	goto skip
 ) else (
-    pip install streamrip --upgrade
+    pip uninstall -y streamrip
+    pip install streamrip
     echo.>"C:\ProgramData\streamrip\upd.txt"
 )
 :skip
@@ -334,14 +341,14 @@ if %input% == 1 (
 ::)
 
 ::turkey
-xcopy "%cd%\streamrip\turkey.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\turkey.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\turkey.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\turkey.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::unitedkingdom
 xcopy "%cd%\streamrip\unitedkingdom.toml" "C:\ProgramData\streamrip" /y
@@ -379,17 +386,21 @@ if %update% == 1 (goto upd)
 goto choice
 
 :upd
-:: примусове оновлення до streamrip v2.0.3+ в v1.11 буде видалено
-pip install streamrip --upgrade
+:: примусове оновлення до streamrip v2.0.5+ в v1.11 буде видалено
+pip uninstall -y streamrip
+pip install streamrip
 
-if exist "%tmp%\streamrip" @rd /s /q "%tmp%\streamrip"
-if exist "%tmp%\streamrip.zip" del /f "%tmp%\streamrip.zip"
-if not exist "%tmp%\streamrip" mkdir "%tmp%\streamrip"
-curl -s "https://codeload.github.com/linyv4ik/streamrip/zip/refs/heads/main" --output "%tmp%\streamrip.zip"
-powershell Expand-Archive "%tmp%\streamrip.zip" -DestinationPath "%tmp%\streamrip"
-xcopy "%tmp%\streamrip\streamrip-main\*" "%cd%" /E /I /Y
-if exist "%tmp%\streamrip" @rd /s /q "%tmp%\streamrip"
-if exist "%tmp%\streamrip.zip" del /f "%tmp%\streamrip.zip"
-timeout /t 2
-start cmd /c "streamrip.bat"
+echo @echo off >>"%tmp%\update.bat"
+echo timeout /t 1 >>"%tmp%\update.bat"
+echo if exist "%tmp%\streamrip" rmdir /s /q "%tmp%\streamrip">>"%tmp%\update.bat"
+echo if exist "%tmp%\streamrip.zip" del /f "%tmp%\streamrip.zip">>"%tmp%\update.bat"
+echo if not exist "%tmp%\streamrip" mkdir "%tmp%\streamrip">>"%tmp%\update.bat"
+echo curl -s "https://codeload.github.com/linyv4ik/streamrip/zip/refs/heads/main" --output "%tmp%\streamrip.zip">>"%tmp%\update.bat"
+echo powershell Expand-Archive "%tmp%\streamrip.zip" -DestinationPath "%tmp%\streamrip" -Force>>"%tmp%\update.bat"
+echo xcopy "%tmp%\streamrip\streamrip-main\*" "%cd%" /E /I /Y>>"%tmp%\update.bat"
+echo if exist "%tmp%\streamrip" rmdir /s /q "%tmp%\streamrip">>"%tmp%\update.bat"
+echo if exist "%tmp%\streamrip.zip" del /f "%tmp%\streamrip.zip">>"%tmp%\update.bat"
+echo timeout /t 1 >>"%tmp%\update.bat"
+echo start cmd /c "streamrip.bat">>"%tmp%\update.bat"
+start cmd /c "%tmp%\update.bat"
 exit
