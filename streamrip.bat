@@ -7,7 +7,7 @@ if not exist "%cd%\streamrip" goto upd
 if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
 if not exist "C:\Users\%USERNAME%\AppData\Roaming\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
 ::update checker
-:: примусове оновлення до streamrip v2.0.5+ в v1.11 буде видалено
+:: примусове оновлення до streamrip v2.0.5+ в v2.003 буде видалено
 if exist "C:\ProgramData\streamrip\upd.txt" (
 	goto skip
 ) else (
@@ -17,7 +17,7 @@ if exist "C:\ProgramData\streamrip\upd.txt" (
 )
 :skip
 if exist "%tmp%\s_version.txt" del /f "%tmp%\s_version.txt"
-set version=1.10
+set version=2.000
 curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
 set /p file_version=<"%tmp%\s_version.txt"
@@ -385,7 +385,7 @@ if %update% == 1 (goto upd)
 goto choice
 
 :upd
-:: примусове оновлення до streamrip v2.0.5+ в v1.11 буде видалено
+:: примусове оновлення до streamrip v2.0.5+ в v2.003 буде видалено
 pip uninstall -y streamrip
 pip install streamrip
 
