@@ -17,7 +17,7 @@ if exist "C:\ProgramData\streamrip\upd.txt" (
 )
 :skip
 if exist "%tmp%\s_version.txt" del /f "%tmp%\s_version.txt"
-set version=2.001
+set version=2.002
 curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
 set /p file_version=<"%tmp%\s_version.txt"
@@ -70,14 +70,14 @@ if %input% == 1 (
 ::)
 
 ::bolivia
-xcopy "%cd%\streamrip\bolivia.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\bolivia.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\bolivia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\bolivia.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::brasil
 ::xcopy "%cd%\streamrip\brasil.toml" "C:\ProgramData\streamrip" /y
@@ -110,14 +110,14 @@ if %input% == 1 (
 ::)
 
 ::colombia
-xcopy "%cd%\streamrip\colombia.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\colombia.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\colombia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\colombia.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::costarica
 ::xcopy "%cd%\streamrip\costarica.toml" "C:\ProgramData\streamrip" /y
@@ -150,14 +150,14 @@ if %input% == 1 (
 ::)
 
 ::denmark
-xcopy "%cd%\streamrip\denmark.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\denmark.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\denmark.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\denmark.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::france
 ::xcopy "%cd%\streamrip\france.toml" "C:\ProgramData\streamrip" /y
@@ -170,14 +170,14 @@ if %input% == 1 (
 ::)
 
 ::germany
-xcopy "%cd%\streamrip\germany.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\germany.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\germany.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\germany.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::guatemala
 ::xcopy "%cd%\streamrip\guatemala.toml" "C:\ProgramData\streamrip" /y
@@ -190,14 +190,14 @@ if %input% == 1 (
 ::)
 
 ::honduras
-xcopy "%cd%\streamrip\honduras.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\honduras.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\honduras.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\honduras.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::italy
 ::xcopy "%cd%\streamrip\italy.toml" "C:\ProgramData\streamrip" /y
@@ -240,14 +240,14 @@ if %input% == 1 (
 ::)
 
 ::netherlands
-xcopy "%cd%\streamrip\netherlands.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\netherlands.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\netherlands.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\netherlands.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::newzealand
 ::xcopy "%cd%\streamrip\newzealand.toml" "C:\ProgramData\streamrip" /y
@@ -300,24 +300,24 @@ if %input% == 1 (
 ::)
 
 ::serbia
-xcopy "%cd%\streamrip\serbia.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\serbia.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\serbia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\serbia.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::slovenia
-xcopy "%cd%\streamrip\slovenia.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\slovenia.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\slovenia.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\slovenia.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::southafrica
 xcopy "%cd%\streamrip\southafrica.toml" "C:\ProgramData\streamrip" /y
