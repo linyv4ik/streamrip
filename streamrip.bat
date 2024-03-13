@@ -3,21 +3,13 @@ chcp 65001
 title streamrip
 ::restore health
 if exist "%tmp%\update.bat" del /f "%tmp%\update.bat"
+if exist "C:\ProgramData\streamrip\upd.txt" del /f "C:\ProgramData\streamrip\upd.txt"
 if not exist "%cd%\streamrip" goto upd
 if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
 if not exist "C:\Users\%USERNAME%\AppData\Roaming\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
 ::update checker
-:: примусове оновлення до streamrip v2.0.5+ в v2.003 буде видалено
-if exist "C:\ProgramData\streamrip\upd.txt" (
-	goto skip
-) else (
-    pip uninstall -y streamrip
-    pip install streamrip
-    echo.>"C:\ProgramData\streamrip\upd.txt"
-)
-:skip
 if exist "%tmp%\s_version.txt" del /f "%tmp%\s_version.txt"
-set version=2.002
+set version=2.003
 curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
 set /p file_version=<"%tmp%\s_version.txt"
@@ -50,14 +42,14 @@ if %input% == 2 (goto deezer_db)
 ::)
 
 ::austria
-xcopy "%cd%\streamrip\austria.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\austria.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\austria.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\austria.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 ::belgium
 ::xcopy "%cd%\streamrip\belgium.toml" "C:\ProgramData\streamrip" /y
@@ -160,24 +152,24 @@ if %input% == 1 (
 ::)
 
 ::france
-::xcopy "%cd%\streamrip\france.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\france.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+xcopy "%cd%\streamrip\france.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\france.toml" config.toml
+move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+if %input% == 1 (
+	rip file url.txt
+) else (
+    rip url %input%
+)
 
 ::germany
-::xcopy "%cd%\streamrip\germany.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\germany.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+xcopy "%cd%\streamrip\germany.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\germany.toml" config.toml
+move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+if %input% == 1 (
+	rip file url.txt
+) else (
+    rip url %input%
+)
 
 ::guatemala
 ::xcopy "%cd%\streamrip\guatemala.toml" "C:\ProgramData\streamrip" /y
@@ -250,14 +242,14 @@ if %input% == 1 (
 ::)
 
 ::newzealand
-::xcopy "%cd%\streamrip\newzealand.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\newzealand.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+xcopy "%cd%\streamrip\newzealand.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\newzealand.toml" config.toml
+move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+if %input% == 1 (
+	rip file url.txt
+) else (
+    rip url %input%
+)
 
 ::northmacedonia
 ::xcopy "%cd%\streamrip\northmacedonia.toml" "C:\ProgramData\streamrip" /y
@@ -360,14 +352,14 @@ if %input% == 1 (
 )
 
 ::unitedstates
-xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+::xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
+::rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
+::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+::if %input% == 1 (
+::	rip file url.txt
+::) else (
+::    rip url %input%
+::)
 
 goto menu
 
@@ -385,9 +377,9 @@ if %update% == 1 (goto upd)
 goto choice
 
 :upd
-:: примусове оновлення до streamrip v2.0.5+ в v2.003 буде видалено
-pip uninstall -y streamrip
-pip install streamrip
+:: примусове оновлення streamrip
+::pip uninstall -y streamrip
+::pip install streamrip
 
 echo @echo off >>"%tmp%\update.bat"
 echo timeout /t 1 >>"%tmp%\update.bat"
