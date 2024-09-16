@@ -1,6 +1,53 @@
 @echo off
 chcp 65001
+setlocal enabledelayedexpansion
 title streamrip
+set /a available_countries=0
+set version=2.008
+
+::Settings
+::активація країни: 0=вимкнена 1=активна
+set dl_australia=0
+set dl_austria=0
+set dl_belgium=0
+set dl_bolivia=0
+set dl_brasil=0
+set dl_bulgaria=0
+set dl_canada=1
+set dl_colombia=0
+set dl_costarica=0
+set dl_croatia=0
+set dl_denmark=0
+set dl_ecuador=0
+set dl_france=1
+set dl_germany=0
+set dl_guatemala=0
+set dl_honduras=0
+set dl_indonesia=0
+set dl_italy=0
+set dl_mauritius=0
+set dl_mexico=0
+set dl_netherlands=0
+set dl_newzealand=0
+set dl_northmacedonia=0
+set dl_paraguay=1
+set dl_peru=0
+set dl_poland=0
+set dl_salvador=0
+set dl_serbia=1
+set dl_slovenia=0
+set dl_southafrica=0
+set dl_spain=0
+set dl_switzerland=0
+set dl_turkey=0
+set dl_ukraine=0
+set dl_unitedkingdom=0
+set dl_unitedstates=1
+
+::далі не чіпати нічого
+for %%C in (australia austria belgium bolivia brasil bulgaria canada colombia costarica croatia denmark ecuador france germany guatemala honduras indonesia italy mauritius mexico netherlands newzealand northmacedonia paraguay peru poland salvador serbia slovenia southafrica spain switzerland turkey ukraine unitedkingdom unitedstates) do (
+    if !dl_%%C! equ 1 set /a available_countries+=1
+)
 ::restore health
 if exist "%tmp%\update.bat" del /f "%tmp%\update.bat"
 if exist "C:\ProgramData\streamrip\upd.txt" del /f "C:\ProgramData\streamrip\upd.txt"
@@ -9,387 +56,242 @@ if not exist "C:\ProgramData\streamrip" mkdir "C:\ProgramData\streamrip"
 if not exist "C:\Users\%USERNAME%\AppData\Roaming\streamrip" mkdir "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
 ::update checker
 if exist "%tmp%\s_version.txt" del /f "%tmp%\s_version.txt"
-set version=2.007
 curl -s "https://raw.githubusercontent.com/linyv4ik/update/main/s_version.txt" --output "%tmp%\s_version.txt"
 cls
 set /p file_version=<"%tmp%\s_version.txt"
 if %version% lss %file_version% (
     echo Поточна версія %version% вийшло оновлення %file_version%
 	goto choice
-) else (
-    goto menu
 )
+set dl=1
+goto menu
 
 :menu
+title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%/36
 echo.
 echo Введіть посилання на альбом Deezer або виберіть бажану опцію з меню
 echo.
 echo 1 Завантажити посилання з файлу url.txt
 echo 2 Видалити історію завантаження
 echo.
-set /P input=""
-echo.
+set /P input=
 if %input% == 2 (goto deezer_db)
 
-::australia
-xcopy "%cd%\streamrip\australia.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\australia.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:australia
+set country=australia
+if %dl_australia% == 0 (goto austria)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::austria
-xcopy "%cd%\streamrip\austria.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\austria.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:austria
+set country=austria
+if %dl_austria% == 0 (goto belgium)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::belgium
-::xcopy "%cd%\streamrip\belgium.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\belgium.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:belgium
+set country=belgium
+if %dl_belgium% == 0 (goto bolivia)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::bolivia
-::xcopy "%cd%\streamrip\bolivia.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\bolivia.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:bolivia
+set country=bolivia
+if %dl_bolivia% == 0 (goto brasil)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::brasil
-xcopy "%cd%\streamrip\brasil.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\brasil.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:brasil
+set country=brasil
+if %dl_brasil% == 0 (goto bulgaria)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::bulgaria
-::xcopy "%cd%\streamrip\bulgaria.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\bulgaria.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:bulgaria
+set country=bulgaria
+if %dl_bulgaria% == 0 (goto canada)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::canada
-xcopy "%cd%\streamrip\canada.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\canada.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:canada
+set country=canada
+if %dl_canada% == 0 (goto colombia)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::colombia
-::xcopy "%cd%\streamrip\colombia.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\colombia.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:colombia
+set country=colombia
+if %dl_colombia% == 0 (goto costarica)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::costarica
-::xcopy "%cd%\streamrip\costarica.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\costarica.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:costarica
+set country=costarica
+if %dl_costarica% == 0 (goto croatia)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::croatia
-::xcopy "%cd%\streamrip\croatia.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\croatia.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:croatia
+set country=croatia
+if %dl_croatia% == 0 (goto ecuador)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::ecuador
-::xcopy "%cd%\streamrip\ecuador.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\ecuador.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:ecuador
+set country=ecuador
+if %dl_ecuador% == 0 (goto denmark)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::denmark
-::xcopy "%cd%\streamrip\denmark.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\denmark.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:denmark
+set country=denmark
+if %dl_denmark% == 0 (goto france)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::france
-xcopy "%cd%\streamrip\france.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\france.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:france
+set country=france
+if %dl_france% == 0 (goto germany)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::germany
-xcopy "%cd%\streamrip\germany.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\germany.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:germany
+set country=germany
+if %dl_germany% == 0 (goto guatemala)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::guatemala
-::xcopy "%cd%\streamrip\guatemala.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\guatemala.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:guatemala
+set country=guatemala
+if %dl_guatemala% == 0 (goto honduras)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::honduras
-::xcopy "%cd%\streamrip\honduras.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\honduras.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:honduras
+set country=honduras
+if %dl_honduras% == 0 (goto italy)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::italy
-::xcopy "%cd%\streamrip\italy.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\italy.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:italy
+set country=italy
+if %dl_italy% == 0 (goto indonesia)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::indonesia
-::xcopy "%cd%\streamrip\indonesia.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\indonesia.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:indonesia
+set country=indonesia
+if %dl_indonesia% == 0 (goto mauritius)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::mauritius
-::xcopy "%cd%\streamrip\mauritius.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\mauritius.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:mauritius
+set country=mauritius
+if %dl_mauritius% == 0 (goto mexico)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::mexico
-::xcopy "%cd%\streamrip\mexico.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\mexico.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:mexico
+set country=mexico
+if %dl_mexico% == 0 (goto netherlands)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::netherlands
-xcopy "%cd%\streamrip\netherlands.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\netherlands.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:netherlands
+set country=netherlands
+if %dl_netherlands% == 0 (goto newzealand)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::newzealand
-::xcopy "%cd%\streamrip\newzealand.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\newzealand.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:newzealand
+set country=newzealand
+if %dl_newzealand% == 0 (goto northmacedonia)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::northmacedonia
-::xcopy "%cd%\streamrip\northmacedonia.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\northmacedonia.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:northmacedonia
+set country=northmacedonia
+if %dl_northmacedonia% == 0 (goto paraguay)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::paraguay
-::xcopy "%cd%\streamrip\paraguay.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\paraguay.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:paraguay
+set country=paraguay
+if %dl_paraguay% == 0 (goto peru)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::peru
-::xcopy "%cd%\streamrip\peru.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\peru.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:peru
+set country=peru
+if %dl_peru% == 0 (goto poland)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::poland
-::xcopy "%cd%\streamrip\poland.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\poland.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:poland
+set country=poland
+if %dl_poland% == 0 (goto salvador)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::salvador
-::xcopy "%cd%\streamrip\salvador.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\salvador.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:salvador
+set country=salvador
+if %dl_salvador% == 0 (goto serbia)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::serbia
-::xcopy "%cd%\streamrip\serbia.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\serbia.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:serbia
+set country=serbia
+if %dl_serbia% == 0 (goto slovenia)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::slovenia
-::xcopy "%cd%\streamrip\slovenia.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\slovenia.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:slovenia
+set country=slovenia
+if %dl_slovenia% == 0 (goto southafrica)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::southafrica
-::xcopy "%cd%\streamrip\southafrica.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\southafrica.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:southafrica
+set country=southafrica
+if %dl_southafrica% == 0 (goto spain)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::spain
-::xcopy "%cd%\streamrip\spain.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\spain.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:spain
+set country=spain
+if %dl_spain% == 0 (goto switzerland)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::switzerland
-::xcopy "%cd%\streamrip\switzerland.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\switzerland.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:switzerland
+set country=switzerland
+if %dl_switzerland% == 0 (goto turkey)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::turkey
-::xcopy "%cd%\streamrip\turkey.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\turkey.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:turkey
+set country=turkey
+if %dl_turkey% == 0 (goto ukraine)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::ukraine
-::xcopy "%cd%\streamrip\ukraine.toml" "C:\ProgramData\streamrip" /y
-::rename "C:\ProgramData\streamrip\ukraine.toml" config.toml
-::move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-::if %input% == 1 (
-::	rip file url.txt
-::) else (
-::    rip url %input%
-::)
+:ukraine
+set country=ukraine
+if %dl_ukraine% == 0 (goto unitedkingdom)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::unitedkingdom
-xcopy "%cd%\streamrip\unitedkingdom.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\unitedkingdom.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:unitedkingdom
+set country=unitedkingdom
+if %dl_unitedkingdom% == 0 (goto unitedstates)
+if %dl% == 1 (goto downloads)
+set dl=1
 
-::unitedstates
-xcopy "%cd%\streamrip\unitedstates.toml" "C:\ProgramData\streamrip" /y
-rename "C:\ProgramData\streamrip\unitedstates.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
-if %input% == 1 (
-	rip file url.txt
-) else (
-    rip url %input%
-)
+:unitedstates
+set country=unitedstates
+if %dl_unitedstates% == 0 (goto menu)
+if %dl% == 1 (goto downloads)
+set dl=1
 
 goto menu
 
@@ -425,3 +327,23 @@ echo timeout /t 1 >>"%tmp%\update.bat"
 echo start cmd /c "streamrip.bat">>"%tmp%\update.bat"
 start cmd /c "%tmp%\update.bat"
 exit
+
+:downloads
+echo.
+title streamrip %country%
+if not exist "%cd%\streamrip\%country%.toml" goto country_skip
+xcopy "%cd%\streamrip\%country%.toml" "C:\ProgramData\streamrip" /y
+rename "C:\ProgramData\streamrip\%country%.toml" config.toml
+move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+echo.
+if %input% == 1 (
+	for /f "delims=" %%a in (url.txt) do (
+    set url=%%a
+        rip url !url!
+)
+) else (
+    rip url %input%
+)
+:country_skip
+set dl=0
+goto %country%

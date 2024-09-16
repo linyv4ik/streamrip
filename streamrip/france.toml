@@ -12,7 +12,7 @@ concurrency = true
 # If you have very fast internet, you will benefit from a higher value,
 # A value that is too high for your bandwidth may cause slowdowns
 # Set to -1 for no limit
-max_connections = 3
+max_connections = 6
 # Max number of API requests per source to handle per minute
 # Set to -1 for no limit
 requests_per_minute = 60
@@ -58,7 +58,7 @@ quality = 2
 # An authentication cookie that allows streamrip to use your Deezer account
 # See https://github.com/nathom/streamrip/wiki/Finding-Your-Deezer-ARL-Cookie
 # for instructions on how to find this
-arl = "dc6934e08d31f80dc81feb6ecb1a6b59608fd8096fc734aa75f5d8193565d61dcf2f7759622d772f2e3f23426d9f9844960cde8118cd8acab4d6bb4ef2c2e3afbc296989fbf956711b6599671306a08fb5ff9f1dede790daca9d024839c93753"
+arl = "a3f60b8ce76119ce6c59b2bd79afe832c9453f3cc82373f4920b642354843c4d79b1f32c7682b0135ddea4bced0c028d371de19505c9b47a511acaa0a99f0b2caeefc282d87cba2ed3eb084e72d61f6ef2c00ad133acb40ec1f47c8574632170"
 # This allows for free 320kbps MP3 downloads from Deezer
 # If an arl is provided, deezloader is never used
 use_deezloader = true
