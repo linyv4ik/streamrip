@@ -367,6 +367,7 @@ if %input% == 1 (
 ) else (
     rip url %input%
 )
+
 :country_skip
 set dl=0
 goto %country%
