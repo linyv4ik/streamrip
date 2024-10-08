@@ -3,12 +3,13 @@ chcp 65001
 setlocal enabledelayedexpansion
 title streamrip
 set /a available_countries=0
-set version=2.010
+set version=2.011
 
 ::Settings
 ::активація країни: 0=вимкнена 1=активна
 set dl_australia=0
 set dl_austria=0
+set dl_barbados=1
 set dl_belgium=0
 set dl_bolivia=0
 set dl_brasil=0
@@ -25,8 +26,10 @@ set dl_guatemala=0
 set dl_honduras=0
 set dl_indonesia=0
 set dl_italy=0
+set dl_kiribati=1
 set dl_mauritius=0
 set dl_mexico=0
+set dl_mozambique=1
 set dl_netherlands=0
 set dl_newzealand=0
 set dl_northmacedonia=0
@@ -42,10 +45,10 @@ set dl_switzerland=0
 set dl_turkey=0
 set dl_ukraine=0
 set dl_unitedkingdom=0
-set dl_unitedstates=0
+set dl_unitedstates=1
 
 ::далі не чіпати нічого
-for %%C in (australia austria belgium bolivia brasil bulgaria canada colombia costarica croatia denmark ecuador france germany guatemala honduras indonesia italy mauritius mexico netherlands newzealand northmacedonia paraguay peru poland salvador serbia slovenia southafrica spain switzerland turkey ukraine unitedkingdom unitedstates) do (
+for %%C in (australia austria barbados belgium bolivia brasil bulgaria canada colombia costarica croatia denmark ecuador france germany guatemala honduras indonesia italy kiribati mauritius mexico mozambique netherlands newzealand northmacedonia paraguay peru poland salvador serbia slovenia southafrica spain switzerland turkey ukraine unitedkingdom unitedstates) do (
     if !dl_%%C! equ 1 set /a available_countries+=1
 )
 ::restore health
@@ -67,7 +70,7 @@ set dl=1
 goto menu
 
 :menu
-title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%/36
+title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%/39
 echo.
 echo Введіть посилання на альбом Deezer або виберіть бажану опцію з меню
 echo.
@@ -85,7 +88,13 @@ set dl=1
 
 :austria
 set country=austria
-if %dl_austria% == 0 (goto belgium)
+if %dl_austria% == 0 (goto barbados)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:barbados
+set country=barbados
+if %dl_barbados% == 0 (goto belgium)
 if %dl% == 1 (goto downloads)
 set dl=1
 
@@ -175,7 +184,13 @@ set dl=1
 
 :italy
 set country=italy
-if %dl_italy% == 0 (goto indonesia)
+if %dl_italy% == 0 (goto kiribati)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:kiribati
+set country=kiribati
+if %dl_kiribati% == 0 (goto indonesia)
 if %dl% == 1 (goto downloads)
 set dl=1
 
@@ -193,7 +208,13 @@ set dl=1
 
 :mexico
 set country=mexico
-if %dl_mexico% == 0 (goto netherlands)
+if %dl_mexico% == 0 (goto mozambique)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:mozambique
+set country=mozambique
+if %dl_mozambique% == 0 (goto netherlands)
 if %dl% == 1 (goto downloads)
 set dl=1
 
