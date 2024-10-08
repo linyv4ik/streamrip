@@ -1,5 +1,5 @@
 @echo off
-chcp 65001
+chcp 65001 > nul
 setlocal enabledelayedexpansion
 title streamrip
 set /a available_countries=0
@@ -317,6 +317,7 @@ set dl=1
 goto menu
 
 :deezer_db
+echo.
 if exist "C:\ProgramData\streamrip\downloads.db" del /f/q "C:\ProgramData\streamrip\downloads.db"
 if exist "C:\ProgramData\streamrip\failed_downloads.db" del /f/q "C:\ProgramData\streamrip\failed_downloads.db"
 echo Історію завантаження видалено!
@@ -352,10 +353,11 @@ exit
 :downloads
 echo.
 title streamrip %country%
+echo %cd%\streamrip\%country%.toml
 if not exist "%cd%\streamrip\%country%.toml" goto country_skip
-xcopy "%cd%\streamrip\%country%.toml" "C:\ProgramData\streamrip" /y
+xcopy "%cd%\streamrip\%country%.toml" "C:\ProgramData\streamrip" /y > nul
 rename "C:\ProgramData\streamrip\%country%.toml" config.toml
-move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip"
+move /Y "C:\ProgramData\streamrip\config.toml" "C:\Users\%USERNAME%\AppData\Roaming\streamrip" > nul
 echo.
 if %input% == 1 (
 	for /f "delims=" %%a in (url.txt) do (
