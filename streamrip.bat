@@ -3,7 +3,7 @@ chcp 65001 > nul
 setlocal enabledelayedexpansion
 title streamrip
 set /a available_countries=0
-set version=2.013
+set version=2.014
 
 ::Settings
 ::активація країни: 0=вимкнена 1=активна
@@ -30,7 +30,7 @@ set dl_kiribati=0
 set dl_mauritius=0
 set dl_mexico=0
 set dl_mozambique=0
-set dl_netherlands=1
+set dl_netherlands=0
 set dl_newzealand=0
 set dl_northmacedonia=0
 set dl_paraguay=0
