@@ -3,7 +3,7 @@ chcp 65001 > nul
 setlocal enabledelayedexpansion
 title streamrip
 set /a available_countries=0
-set version=2.016
+set version=2.017
 
 ::Settings
 ::активація країни: 0=вимкнена 1=активна
@@ -17,6 +17,7 @@ set dl_brasil=0
 set dl_bulgaria=0
 set dl_canada=0
 set dl_colombia=0
+set dl_congo=1
 set dl_costarica=0
 set dl_croatia=0
 set dl_denmark=0
@@ -27,6 +28,7 @@ set dl_guatemala=0
 set dl_honduras=0
 set dl_indonesia=0
 set dl_italy=0
+set dl_kazakhstan=0
 set dl_kiribati=0
 set dl_mauritius=0
 set dl_mexico=0
@@ -36,20 +38,23 @@ set dl_newzealand=0
 set dl_northmacedonia=0
 set dl_paraguay=0
 set dl_peru=0
+set dl_philippines=1
 set dl_poland=0
 set dl_salvador=0
+set dl_senegal=1
 set dl_serbia=0
 set dl_slovenia=0
 set dl_southafrica=0
 set dl_spain=0
 set dl_switzerland=0
-set dl_turkey=0
+set dl_turkey=1
 set dl_ukraine=0
 set dl_unitedkingdom=0
 set dl_unitedstates=1
+set dl_uruguay=1
 
 ::далі не чіпати нічого
-for %%C in (australia austria barbados belgium bolivia botswana brasil bulgaria canada colombia costarica croatia denmark ecuador france germany guatemala honduras indonesia italy kiribati mauritius mexico mozambique netherlands newzealand northmacedonia paraguay peru poland salvador serbia slovenia southafrica spain switzerland turkey ukraine unitedkingdom unitedstates) do (
+for %%C in (australia austria barbados belgium bolivia botswana brasil bulgaria canada colombia congo costarica croatia denmark ecuador france germany guatemala honduras indonesia italy kazakhstan kiribati mauritius mexico mozambique netherlands newzealand northmacedonia paraguay peru philippines poland salvador senegal serbia slovenia southafrica spain switzerland turkey ukraine unitedkingdom unitedstates uruguay) do (
     if !dl_%%C! equ 1 set /a available_countries+=1
 )
 ::restore health
@@ -71,7 +76,7 @@ set dl=1
 goto menu
 
 :menu
-title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%/40
+title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%/45
 echo.
 echo Увага... Акаунти блокуються дуже швидко тому раджу використовувати сервіс Qobuz.com (qbz-xxx)
 echo.
@@ -139,7 +144,13 @@ set dl=1
 
 :colombia
 set country=colombia
-if %dl_colombia% == 0 (goto costarica)
+if %dl_colombia% == 0 (goto congo)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:congo
+set country=congo
+if %dl_congo% == 0 (goto costarica)
 if %dl% == 1 (goto downloads)
 set dl=1
 
@@ -193,7 +204,13 @@ set dl=1
 
 :italy
 set country=italy
-if %dl_italy% == 0 (goto kiribati)
+if %dl_italy% == 0 (goto kazakhstan)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:kazakhstan
+set country=kazakhstan
+if %dl_kazakhstan% == 0 (goto kiribati)
 if %dl% == 1 (goto downloads)
 set dl=1
 
@@ -253,7 +270,13 @@ set dl=1
 
 :peru
 set country=peru
-if %dl_peru% == 0 (goto poland)
+if %dl_peru% == 0 (goto philippines)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:philippines
+set country=philippines
+if %dl_philippines% == 0 (goto poland)
 if %dl% == 1 (goto downloads)
 set dl=1
 
@@ -265,7 +288,13 @@ set dl=1
 
 :salvador
 set country=salvador
-if %dl_salvador% == 0 (goto serbia)
+if %dl_salvador% == 0 (goto senegal)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:senegal
+set country=senegal
+if %dl_senegal% == 0 (goto serbia)
 if %dl% == 1 (goto downloads)
 set dl=1
 
@@ -319,7 +348,13 @@ set dl=1
 
 :unitedstates
 set country=unitedstates
-if %dl_unitedstates% == 0 (goto menu)
+if %dl_unitedstates% == 0 (goto uruguay)
+if %dl% == 1 (goto downloads)
+set dl=1
+
+:uruguay
+set country=uruguay
+if %dl_uruguay% == 0 (goto menu)
 if %dl% == 1 (goto downloads)
 set dl=1
 
