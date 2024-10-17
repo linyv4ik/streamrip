@@ -58,7 +58,7 @@ quality = 2
 # An authentication cookie that allows streamrip to use your Deezer account
 # See https://github.com/nathom/streamrip/wiki/Finding-Your-Deezer-ARL-Cookie
 # for instructions on how to find this
-arl = "9fd63620f60d3f30ca75db1394f68f190aeebc16c9ac0dd0e955522909c9d9998f495130c297c9bb1bcfd8e87bd49d188d644511d8aaed13003a7baa3e92643a861f96b66a6499dc1a5cef12b0f2133a5f0a4caa8270bdca4024e44908d6bff4"
+arl = "db7a088368f8ecb67bc4a379f490676e1fbf6b06cc5c73c7e64bf966d7d047178898af2bb9015f5797737aa3fbc56beaa8a19f726c82557fc6733a870777e2318657190d9fd2f0acfa2426cc23c9fbab2487143dad1b865264efe527dabf0baf"
 # This allows for free 320kbps MP3 downloads from Deezer
 # If an arl is provided, deezloader is never used
 use_deezloader = true
