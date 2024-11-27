@@ -3,7 +3,7 @@ chcp 65001 > nul
 setlocal enabledelayedexpansion
 title streamrip
 set /a available_countries=0
-set version=2.023
+set version=2.024
 
 ::Settings
 ::активація країни: 0=вимкнена 1=активна
@@ -30,21 +30,21 @@ set dl_guatemala=0
 set dl_honduras=0
 set dl_indonesia=0
 set dl_italy=0
-set dl_jamaica=1
+set dl_jamaica=0
 set dl_kazakhstan=0
 set dl_kiribati=0
 set dl_mauritius=0
 set dl_mexico=0
 set dl_mozambique=0
 set dl_netherlands=0
-set dl_newzealand=1
+set dl_newzealand=0
 set dl_northmacedonia=0
 set dl_pakistan=0
 set dl_paraguay=0
 set dl_peru=0
-set dl_philippines=0
+set dl_philippines=1
 set dl_poland=0
-set dl_salvador=1
+set dl_salvador=0
 set dl_senegal=0
 set dl_serbia=0
 set dl_slovenia=0
@@ -55,7 +55,7 @@ set dl_tajikistan=0
 set dl_turkey=0
 set dl_ukraine=0
 set dl_unitedkingdom=0
-set dl_unitedstates=1
+set dl_unitedstates=0
 set dl_uruguay=0
 
 ::далі не чіпати нічого
