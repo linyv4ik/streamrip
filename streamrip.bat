@@ -54,8 +54,8 @@ set dl_switzerland=0
 set dl_tajikistan=0
 set dl_turkey=0
 set dl_ukraine=0
-set dl_unitedkingdom=1
-set dl_unitedstates=1
+set dl_unitedkingdom=0
+set dl_unitedstates=0
 set dl_uruguay=0
 
 ::далі не чіпати нічого
@@ -83,7 +83,7 @@ goto menu
 :menu
 title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%/50
 echo.
-echo Увага... Акаунти блокуються дуже швидко тому раджу використовувати сервіс Qobuz.com (qbz-xxx)
+echo Увага... З 2024.01.02 скрипт більше не буде оновлюватися бо Deezer почав активну боротьбу з завантажувачами, живі акаунти вкрай важко знайти, а якщо такі знаходяться то акаунт блокується дуже швидко. Як тільки знайдеться інший робочий спосіб завантаження з deezer.com то скрипт буде оновлено до актуального стану, а поки що раджу використовувати сервіс Qobuz.com (qbz-xxx) https://github.com/linyv4ik/qbz-xxx
 echo.
 echo Введіть посилання на альбом Deezer або виберіть бажану опцію з меню
 echo.
