@@ -3,7 +3,7 @@ chcp 65001 > nul
 setlocal enabledelayedexpansion
 title streamrip
 set /a available_countries=0
-set version=2.025
+set version=2.026
 
 ::Settings
 ::активація країни: 0=вимкнена 1=активна
@@ -23,7 +23,7 @@ set dl_costarica=0
 set dl_croatia=0
 set dl_denmark=0
 set dl_ecuador=0
-set dl_france=0
+set dl_france=1
 set dl_georgia=0
 set dl_germany=0
 set dl_guatemala=0
@@ -81,9 +81,7 @@ set dl=1
 goto menu
 
 :menu
-title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%/50
-echo.
-echo Увага... З 2024.01.02 скрипт більше не буде оновлюватися бо Deezer почав активну боротьбу з завантажувачами, живі акаунти вкрай важко знайти, а якщо такі знаходяться то акаунт блокується дуже швидко. Як тільки знайдеться інший робочий спосіб завантаження з deezer.com то скрипт буде оновлено до актуального стану, а поки що раджу використовувати сервіс Qobuz.com (qbz-xxx) https://github.com/linyv4ik/qbz-xxx
+title streamrip v %version%   Країн доступно на момент оновлення: %available_countries%
 echo.
 echo Введіть посилання на альбом Deezer або виберіть бажану опцію з меню
 echo.
