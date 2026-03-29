@@ -3,7 +3,8 @@
 folder = "C:\\deezer"
 # Put Qobuz albums in a 'Qobuz' folder, Tidal albums in 'Tidal' etc.
 source_subdirectories = false
-
+# Put tracks in an album with 2 or more discs into a subfolder named `Disc N` 
+disc_subdirectories = true
 # Download (and convert) tracks all at once, instead of sequentially. 
 # If you are converting the tracks, or have fast internet, this will 
 # substantially improve processing speed.
@@ -16,6 +17,9 @@ max_connections = 6
 # Max number of API requests per source to handle per minute
 # Set to -1 for no limit
 requests_per_minute = 60
+# Verify SSL certificates for API connections
+# Set to false if you encounter SSL certificate verification errors (not recommended)
+verify_ssl = true
 
 [qobuz]
 # 1: 320kbps MP3, 2: 16/44.1, 3: 24/<=96, 4: 24/>=96
@@ -58,7 +62,7 @@ quality = 2
 # An authentication cookie that allows streamrip to use your Deezer account
 # See https://github.com/nathom/streamrip/wiki/Finding-Your-Deezer-ARL-Cookie
 # for instructions on how to find this
-arl = "fd455edabdc3017d76bda1c3ca724c4ce0ef85f65b645b9d38c23a7b6f92565c744a3c10a075da5f23af7d3a862527ecee31abf98e67af28a920753299183dd96843c2fb77ec4c0c8fcd436d48c5bacf98629125302896eafe5ab98e0d976b93"
+arl = "d70a00e33eb42422cd55bcff8bed068bdbb2de2f9145e7dc969cec2fde59cc993ae143b61c94fa50a78df30ada22b1de30badb11f6768a980409d09d2de0cf91f677028963d8a9e024141b8f61629bc9ef3ea7c20cf808d66438fb921ee26193"
 # This allows for free 320kbps MP3 downloads from Deezer
 # If an arl is provided, deezloader is never used
 use_deezloader = true
@@ -157,10 +161,10 @@ exclude = []
 # template
 add_singles_to_folder = false
 # Available keys: "albumartist", "title", "year", "bit_depth", "sampling_rate",
-# "container", "id", and "albumcomposer"
+# "id", and "albumcomposer"
 folder_format = "{albumartist} - {title} ({year}) [{bit_depth}B-{sampling_rate}kHz]"
 # Available keys: "tracknumber", "artist", "albumartist", "composer", "title",
-# and "albumcomposer"
+# and "albumcomposer", "explicit"
 track_format = "{tracknumber}. {title}{explicit}"
 # Only allow printable ASCII characters in filenames.
 restrict_characters = false
@@ -186,6 +190,6 @@ max_search_results = 100
 
 [misc]
 # Metadata to identify this config file. Do not change.
-version = "2.0.3"
+version = "2.0.6"
 # Print a message if a new version of streamrip is available 
 check_for_updates = false
